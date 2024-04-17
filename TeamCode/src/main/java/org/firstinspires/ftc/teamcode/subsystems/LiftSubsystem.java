@@ -18,9 +18,7 @@ public class LiftSubsystem extends SubsystemBase {
 		TOP(20),
 		MIDDLE(10),
 		BOTTOM(1),
-		START(0),
-		TILT_SAFE(2),
-		HANG(16);
+		START(0);
 
 		public final double inches;
 
