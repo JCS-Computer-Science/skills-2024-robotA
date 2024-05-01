@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode.opModes.base;
 import com.arcrobotics.ftclib.command.CommandOpMode;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
+import org.firstinspires.ftc.teamcode.subsystems.BranchPullerSubsystem;
 import org.firstinspires.ftc.teamcode.subsystems.DriveSubsystem;
 import org.firstinspires.ftc.teamcode.subsystems.LiftSubsystem;
 import org.firstinspires.ftc.teamcode.subsystems.TelemetrySubsystem;
@@ -22,6 +23,7 @@ public abstract class BaseOpMode extends CommandOpMode {
 
 	protected TelemetrySubsystem telemetrySubsystem, t;
 	protected LiftSubsystem liftSubsystem, lift;
+	protected BranchPullerSubsystem branchPullerSubsystem;
 	protected HardwareMap hMap;
 
 	public abstract void setup();
@@ -35,7 +37,7 @@ public abstract class BaseOpMode extends CommandOpMode {
 		driveSubsystem = new DriveSubsystem(hMap, telemetrySubsystem);
 
 		liftSubsystem = new LiftSubsystem(hMap, telemetrySubsystem);
-
+		branchPullerSubsystem = new BranchPullerSubsystem(hMap, telemetrySubsystem);
 
 
 		// 	Aliases

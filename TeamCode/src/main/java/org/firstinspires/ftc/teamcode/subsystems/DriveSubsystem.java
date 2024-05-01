@@ -3,13 +3,15 @@ package org.firstinspires.ftc.teamcode.subsystems;
 import androidx.annotation.NonNull;
 
 import com.arcrobotics.ftclib.command.SubsystemBase;
-import com.arcrobotics.ftclib.drivebase.MecanumDrive;
+//import com.arcrobotics.ftclib.drivebase.MecanumDrive;
 import com.arcrobotics.ftclib.hardware.motors.MotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
+import org.firstinspires.ftc.teamcode.util.MecanumDriveEx;
+
 public class DriveSubsystem extends SubsystemBase {
     private final MotorEx frontLeft, frontRight, backLeft, backRight;
-    public final MecanumDrive drive;
+    public final MecanumDriveEx drive;
     private final TelemetrySubsystem t;
 
     public DriveSubsystem(@NonNull HardwareMap hardwareMap, TelemetrySubsystem telemetrySubsystem) {
@@ -19,10 +21,8 @@ public class DriveSubsystem extends SubsystemBase {
         frontRight = new MotorEx(hardwareMap, "frontRight");
         backLeft = new MotorEx(hardwareMap, "backLeft");
         backRight = new MotorEx(hardwareMap, "backRight");
-
-        for (MotorEx motor : new MotorEx[]{frontLeft, frontRight, backLeft, backRight}) {
-            motor.setInverted(true);
-        }
+//        backRight.setInverted(true);
+//        frontLeft.setInverted(true);
 
         frontLeft.setZeroPowerBehavior(MotorEx.ZeroPowerBehavior.BRAKE);
         frontRight.setZeroPowerBehavior(MotorEx.ZeroPowerBehavior.BRAKE);
@@ -30,12 +30,15 @@ public class DriveSubsystem extends SubsystemBase {
         backRight.setZeroPowerBehavior(MotorEx.ZeroPowerBehavior.BRAKE);
 
 //        Drivetrain
-        drive = new MecanumDrive(
+        drive = new MecanumDriveEx(
                 frontLeft,
                 frontRight,
                 backLeft,
-                backRight
+                backRight,
+                0.45
         );
+
+
     }
     /**
      * Drives the robot from the perspective of the robot itself rather than that

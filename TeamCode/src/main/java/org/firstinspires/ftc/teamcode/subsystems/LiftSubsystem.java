@@ -15,8 +15,8 @@ import org.firstinspires.ftc.teamcode.util.Convert;
 
 public class LiftSubsystem extends SubsystemBase {
 	public enum LIFT_POSITIONS {
-		TOP(20),
-		MIDDLE(10),
+		TOP(18.75),
+		MIDDLE(9),
 		BOTTOM(1),
 		START(0);
 
@@ -28,7 +28,7 @@ public class LiftSubsystem extends SubsystemBase {
 	}
 	private final TelemetrySubsystem t;
 	public DcMotorEx liftMotor;
-	private final double ticksPerInches = 537.7/(Math.PI * Convert.mmToInches(38.2));
+	private final double ticksPerInches = 1425.1/(Math.PI * Convert.mmToInches(38.2));
 	public int ticksFromInches(double inches) {
 		return Double.valueOf(inches * ticksPerInches).intValue();
 	}
