@@ -5,6 +5,7 @@ import com.arcrobotics.ftclib.command.button.GamepadButton;
 import com.arcrobotics.ftclib.gamepad.GamepadEx;
 import com.arcrobotics.ftclib.gamepad.GamepadKeys;
 
+import org.firstinspires.ftc.teamcode.commands.door.SetDoor;
 import org.firstinspires.ftc.teamcode.commands.drive.TeleOpDrive;
 import org.firstinspires.ftc.teamcode.commands.lift.MoveLiftManual;
 import org.firstinspires.ftc.teamcode.commands.lift.MoveLiftPreset;
@@ -56,6 +57,7 @@ public abstract class TeleOpMode extends BaseOpMode {
         yButton.whenPressed(new TurretToCenter(branchPullerSubsystem));
         aButton.whenPressed(new TogglePuller(branchPullerSubsystem));
 
+        rBumper.whenPressed(new SetDoor(doorSubsystem, true)).whenReleased(new SetDoor(doorSubsystem, false));
 
 
         liftSubsystem.setDefaultCommand(new MoveLiftManual(liftSubsystem, driver));
