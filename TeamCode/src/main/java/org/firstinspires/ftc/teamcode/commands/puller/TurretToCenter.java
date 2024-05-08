@@ -27,7 +27,7 @@ public class TurretToCenter extends CommandBase {
 
 	@Override
 	public boolean isFinished() {
-		return pullerSubsystem.isCentered();
+		return !pullerSubsystem.isCentered();
 	}
 
 	@Override

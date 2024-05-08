@@ -104,6 +104,8 @@ public class BranchPullerSubsystem extends SubsystemBase {
 		t.addData("Left Limit", leftLimit.getState());
 		t.addData("Center Switch", centerSwitch.getState());
 		t.addData("Right Limit", rightLimit.getState());
+
+		t.addData("CW passing C", clockwisePassingCenter);
 	}
 
 

@@ -34,7 +34,7 @@ public abstract class TeleOpMode extends BaseOpMode {
        // toolOp = new GamepadEx(gamepad2);
 
 //      Drive Subsystem Controls
-        driveSubsystem.setDefaultCommand(new TeleOpDrive(driveSubsystem,()->-driver.getLeftY(),()->driver.getLeftX(),()->driver.getRightX()));
+        driveSubsystem.setDefaultCommand(new TeleOpDrive(driveSubsystem,()->-driver.getLeftY(),()->-driver.getLeftX(),()->driver.getRightX()));
         driveSubsystem.drive.setMaxSpeed(0.8);
 
 //      Lift Subsystem Controls
